@@ -1,0 +1,30 @@
+Workflows
+•	Bounded context:”Question context”
+o	Workflow:”Create a question”
+	Triggered by:” Posts a new question request received ”
+	Input:”Question form(Display title,body,tags)”
+	Output:”Post a new question”event
+	Side effects:”Confirm question posted to the user and then the user is being notified”
+
+Workflows documentation
+•	Workflow:”Create the question”
+o	Input:”Question form”
+o	Output:”Post a new question” event or invalid question form
+//step 1
+  Do post a new question form
+If form is invalid then stop
+//step 2
+Send notification to confirm that the new question was posted or created
+//step 3
+Return another question(new) accepted and posted event
+•	Substep “Validate question form”
+o	Input:”Unvalidated question form”
+o	Output:”Validated question form”
+o	Dependencies:body validator,tags validator,title validator,question validation
+•	Validate the title
+•	Validate the body
+•	Validate the tags
+•	If all validations passed then
+	Return validated question form
+•	Else return validation error
+
