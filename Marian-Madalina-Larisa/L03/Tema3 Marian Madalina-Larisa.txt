@@ -1,0 +1,21 @@
+Workflows
+•	Bounded context:”Q&A context”
+o	Workflow:”Create a question”
+	Triggered by:” Containing decent language”
+	Input:”Put the question”
+	Output:”Get the answer”
+	Side effects:”Confirm the answer and ask another question”
+
+Workflows documentation
+•	Workflow:”Create the question”
+o	Input:”Put the question”
+o	Output:”Get the answer,confirm it or ask another question”
+//step 1
+  Do wait for the question
+If there is no question then stop
+//step 2
+Verify the answer to the question
+//step 3
+Send confirmation for the answer
+//step 4
+Return to create another question
